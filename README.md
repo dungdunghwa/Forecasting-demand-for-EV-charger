@@ -51,8 +51,17 @@ I used PCA to select the variables. charger variable is directly related to the 
 ## P-median modeling
 ### About algorithm
 [click here to see the structure of algorithm](https://raw.githubusercontent.com/ralaruri/p_median_python/master/formula.png) 
-#### Example of 1-median problem
  
+#### Example of 1-median problem 
+Let's consider 1-median problem where you have to choose a facility among 4 demand nodes.
+In other words, demand space I equals to supply space J (I=J). 
+ 
+<img src="https://user-images.githubusercontent.com/108067353/195378225-c39c1ac7-5a7f-47d9-b999-55aba6d03b40.jpg" width=500 height=700>
+ 
+* **first trial** : d_{1, 4} is the largest distance but h_{1} is very high. To minimize the loss function A, you have to choose other supply node whose distance between node 1 is shorter than these trial.
+* **second trial** : Since the distance value which is multiplied by h_{1} is smaller than first trial, A decreased. However, 0.9, the largest demand is alive in the function and there may exist limitation due to that.
+* **third trial** : All demand multipliers are 0.1. The loss function A is minimized in here. Therefore, according to 1-median algorithm, node 1 is the best location satisfying efficiently all the demand in I.
+   
 ### p-median in R
 P-median algorithm can be implemented with packages 'tbart' and 'sp'.  
 you have to change the DataFrame into Spatial*DataFrame to apply allocations() function.
