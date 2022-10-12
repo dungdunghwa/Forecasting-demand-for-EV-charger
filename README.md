@@ -49,6 +49,11 @@ I used PCA to select the variables. charger variable is directly related to the 
     
 
 ## P-median modeling
+### About algorithm
+[click here to see the structure of algorithm](https://raw.githubusercontent.com/ralaruri/p_median_python/master/formula.png) 
+#### Example of 1-median problem
+ 
+### p-median in R
 P-median algorithm can be implemented with packages 'tbart' and 'sp'.  
 you have to change the DataFrame into Spatial*DataFrame to apply allocations() function.
 	
